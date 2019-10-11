@@ -3133,6 +3133,7 @@ impl<'tcx> TyCtxt<'tcx> {
     }
 }
 
+#[derive(Clone)]
 pub struct AssocItemsIterator<'tcx> {
     tcx: TyCtxt<'tcx>,
     def_ids: &'tcx [DefId],
