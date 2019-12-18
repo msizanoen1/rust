@@ -124,6 +124,7 @@ else
     ncpus=$(grep processor /proc/cpuinfo | wc -l)
 fi
 
+SCRIPT="python2.7 ../x.py test src/test/run-make-fulldeps"
 if [ ! -z "$SCRIPT" ]; then
   sh -x -c "$SCRIPT"
 else
