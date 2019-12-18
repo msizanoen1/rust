@@ -39,8 +39,8 @@ if [ -f "$docker_dir/$image/Dockerfile" ]; then
         awk '{print $1}')
 
       s3url="s3://$SCCACHE_BUCKET/docker/$cksum"
-      url="https://$SCCACHE_BUCKET.s3.amazonaws.com/docker/$cksum"
-      upload="aws s3 cp - $s3url"
+      url="https://rust-lang-ci-sccache2.s3.amazonaws.com/docker/$cksum"
+      #upload="aws s3 cp - $s3url"
 
       echo "Attempting to download $url"
       rm -f /tmp/rustci_docker_cache
