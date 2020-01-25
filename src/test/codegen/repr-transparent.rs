@@ -1,7 +1,7 @@
 // compile-flags: -C no-prepopulate-passes
 
 #![crate_type="lib"]
-#![feature(repr_simd, transparent_enums, transparent_unions)]
+#![feature(transparent_enums, transparent_unions)]
 
 use std::marker::PhantomData;
 
@@ -94,16 +94,6 @@ pub struct Nested2(Nested1, Zst1);
 // CHECK: define double @test_Nested2(double %_1)
 #[no_mangle]
 pub extern fn test_Nested2(_: Nested2) -> Nested2 { loop {} }
-
-#[repr(simd)]
-struct f32x4(f32, f32, f32, f32);
-
-#[repr(transparent)]
-pub struct Vector(f32x4);
-
-// CHECK: define <4 x float> @test_Vector(<4 x float> %_1)
-#[no_mangle]
-pub extern fn test_Vector(_: Vector) -> Vector { loop {} }
 
 trait Mirror { type It: ?Sized; }
 impl<T: ?Sized> Mirror for T { type It = Self; }

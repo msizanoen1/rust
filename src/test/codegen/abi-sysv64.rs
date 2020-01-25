@@ -4,6 +4,8 @@
 
 // ignore-arm
 // ignore-aarch64
+// ignore-riscv32
+// ignore-riscv64
 
 // compile-flags: -C no-prepopulate-passes
 
