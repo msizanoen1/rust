@@ -64,5 +64,8 @@ rustc-std-workspace-core = { path = 'src/tools/rustc-std-workspace-core' }
 rustc-std-workspace-alloc = { path = 'src/tools/rustc-std-workspace-alloc' }
 rustc-std-workspace-std = { path = 'src/tools/rustc-std-workspace-std' }
 
+libc = { git = "https://github.com/msizanoen1/libc", branch = "riscv-musl" }
+compiler_builtins = { git = "https://github.com/msizanoen1/compiler-builtins", branch = "riscv-musl" }
+
 [patch."https://github.com/rust-lang/rust-clippy"]
 clippy_lints = { path = "src/tools/clippy/clippy_lints" }
